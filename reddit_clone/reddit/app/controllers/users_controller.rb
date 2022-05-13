@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       login!(@user)
       redirect_to users_url
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = @user.errors.full_messages
       render :new
     end
   end
